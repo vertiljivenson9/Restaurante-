@@ -1,0 +1,23 @@
+name = "api-auth"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Variables de entorno para desarrollo local
+[vars]
+FRONTEND_URL = "http://localhost:4321"
+ADMIN_URL = "http://localhost:3000"
+
+# Secrets (configurar con: wrangler secret put NOMBRE)
+# TURSO_DATABASE_URL
+# TURSO_AUTH_TOKEN
+# GOOGLE_CLIENT_ID
+# GOOGLE_CLIENT_SECRET
+# JWT_SECRET
+
+# Configuración de desarrollo local
+[env.development]
+vars = { FRONTEND_URL = "http://localhost:4321", ADMIN_URL = "http://localhost:3000" }
+
+# Configuración de producción
+[env.production]
+vars = { FRONTEND_URL = "https://tu-frontend.vercel.app", ADMIN_URL = "https://tu-admin.vercel.app" }
